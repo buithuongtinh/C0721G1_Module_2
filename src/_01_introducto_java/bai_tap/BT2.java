@@ -7,7 +7,7 @@ public class BT2 {
         Scanner input = new Scanner(System.in);
 
         System.out.println("nhập số cần đọc: " );
-        int so = input.nextInt();
+        int so = Integer.parseInt(input.nextLine());
 
         int hangTram = so / 100;
         int hangChuc = (so - hangTram * 100) / 10;
