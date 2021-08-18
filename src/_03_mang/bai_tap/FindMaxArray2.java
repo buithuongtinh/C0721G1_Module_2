@@ -2,7 +2,7 @@ package _03_mang.bai_tap;
 
 import java.util.Scanner;
 
-public class MaxMangHaiChieu {
+public class FindMaxArray2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter colum:");
