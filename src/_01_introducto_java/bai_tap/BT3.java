@@ -8,7 +8,7 @@ public class BT3 {
 
         System.out.print("Bạn muốn đổi bao nhiêu tiền USD: ");
         double usd = Double.parseDouble(scanner.nextLine());
-        double quydoi = usd * 23000;
-        System.out.print("Giá trị VND: "+ quydoi);
+        double quyDoi = usd * 23000;
+        System.out.print("Giá trị VND: "+ quyDoi);
     }
 }
