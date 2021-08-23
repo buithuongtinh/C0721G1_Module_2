@@ -8,7 +8,9 @@ public class Run {
             System.out.println("Chọn chức năng\n" +
                     "1.Add\n" +
                     "2.show\n" +
-                    "3.Exti");
+                    "3.delete\n" +
+                    "4.edit\n" +
+                    "5.Exit");
             System.out.println("Chọn");
             Scanner scanner = new Scanner(System.in);
             int choose = Integer.parseInt(scanner.nextLine());
@@ -20,6 +22,12 @@ public class Run {
                     StudentManager.display();
                     break;
                 case 3:
+                    StudentManager.delete();
+                    break;
+                case 4:
+                    StudentManager.edit();
+                     break;
+                case 5:
                     System.exit(0);
 
             }

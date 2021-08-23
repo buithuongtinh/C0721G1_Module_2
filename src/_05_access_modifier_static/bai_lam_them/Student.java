@@ -1,19 +1,31 @@
 package _05_access_modifier_static.bai_lam_them;
 
 public class Student {
-    private static String school = "Codegym";
+    private  int age;
     private String name;
-    private  int AGE;
+    private Address address;
 
     public Student() {
+
     }
 
-    public static String getSchool() {
-        return school;
+    public Student(int age, String name) {
+        this.age = age;
+        this.name = name;
     }
 
-    public static void setSchool(String school) {
-        Student.school = school;
+    public Student(int age, String name, Address address) {
+        this.age = age;
+        this.name = name;
+        this.address = address;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getName() {
@@ -24,24 +36,20 @@ public class Student {
         this.name = name;
     }
 
-    public int getAGE() {
-        return AGE;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAGE(int AGE) {
-        this.AGE = AGE;
-    }
-
-    public Student(String name, int AGE) {
-        this.name = name;
-        this.AGE = AGE;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "name='" + name + '\'' +
-                ", AGE=" + AGE +
+                "age=" + age +
+                ", name='" + name + '\'' +
+                ", address=" + address +
                 '}';
     }
 }
