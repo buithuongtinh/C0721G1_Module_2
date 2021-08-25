@@ -1,25 +1,25 @@
 package _07_abstract_class_va_interface.bai_tap.interface_resizeable;
 
-import _07_abstract_class_va_interface.bai_tap.interface_resizeable.Circle;
-import _07_abstract_class_va_interface.bai_tap.interface_resizeable.Rectangle;
-import _07_abstract_class_va_interface.bai_tap.interface_resizeable.Shape;
 
 public class TestResizeable {
     public static void main(String[] args) {
-
-        int x = (int) Math.floor(Math.random() * 10);
-        Shape[] shapes = new Shape[2] ;
-        shapes[0] = new Circle(x,"yellow",false);
-        shapes[1] = new Rectangle(x,x,"xanh",true);
-
-        for(Shape a : shapes){
-            System.out.println(a);
+        Shape[] shapes = new Shape[3];
+        shapes[0] = new Circle(3);
+        shapes[1] = new Rectangle(5, 8);
+        shapes[2] = new Square(10);
+        //re-size before:
+        System.out.println("re-size before:");
+        for (Shape element : shapes) {
+            System.out.println(element.toString());
         }
-
-        for(Shape a : shapes){
-            a.resize(Math.random() * 1000);
+        //re-size
+        for (int i = 0; i < shapes.length; i++) {
+            shapes[i].resize(Math.floor(Math.random() * 100 + 1));
         }
-        System.out.println("\n");
-        System.out.println(shapes);
+        //re-sized after:
+        System.out.println("\n re-sized after:");
+        for (Shape element : shapes) {
+            System.out.println(element.toString());
+        }
     }
 }

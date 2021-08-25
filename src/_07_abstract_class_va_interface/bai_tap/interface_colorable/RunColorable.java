@@ -1,7 +1,5 @@
 package _07_abstract_class_va_interface.bai_tap.interface_colorable;
 
-import java.util.Scanner;
-
 public class RunColorable {
     public static void main(String[] args) {
         Shape[] shapes = new Shape[3];
@@ -15,10 +13,10 @@ public class RunColorable {
         }
         //re-size
         for (int i = 0; i < shapes.length; i++) {
-            shapes[i].resize(Math.floor(Math.random() * 100 + 1));  //ok
+            shapes[i].resize(Math.floor(Math.random() * 100 + 1));
         }
         //re-sized after:
-        System.out.println("\n re-sized after:");   // ok
+        System.out.println("\n re-sized after:");
         for (Shape element : shapes) {
             System.out.println(element.toString());
         }
