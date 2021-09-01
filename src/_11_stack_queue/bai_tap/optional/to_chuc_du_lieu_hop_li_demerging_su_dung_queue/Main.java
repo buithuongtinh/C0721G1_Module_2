@@ -29,21 +29,21 @@ public class Main {
             System.out.println(student.toString());
         }
 
-        Queue<Student> nu = new ArrayDeque<>();
-        Queue<Student> nam = new ArrayDeque<>();
+        Queue<Student> male = new ArrayDeque<>();
+        Queue<Student> female = new ArrayDeque<>();
         ArrayList<Student> listGenderSort = new ArrayList<>();
         for (Student student: list) {
             if (student.getGender().equals("Nu")){
-                nu.add(student);
+                male.add(student);
             } else {
-                nam.add(student);
+                female.add(student);
             }
         }
-        while (!nu.isEmpty()) {
-            listGenderSort.add(nu.poll());
+        while (!male.isEmpty()) {
+            listGenderSort.add(male.poll());
         }
-        while (!nam.isEmpty()) {
-            listGenderSort.add(nam.poll());
+        while (!female.isEmpty()) {
+            listGenderSort.add(female.poll());
         }
         System.out.println("List sap xep theo gioi tinh");
         for (Student student: listGenderSort) {
