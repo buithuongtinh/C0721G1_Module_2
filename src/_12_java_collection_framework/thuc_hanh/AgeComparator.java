@@ -1,4 +1,4 @@
-package _12_map_tree.thuc_hanh;
+package _12_java_collection_framework.thuc_hanh;
 
 import java.util.ArrayList;
 import java.util.Collections;
