@@ -1,4 +1,4 @@
-package _11_stack_queue.bai_tap.optional.to_chuc_du_lieu_hop_li_demerging_su_dung_queue;
+package _11_stack_queue.optional.to_chuc_du_lieu_hop_li_demerging_su_dung_queue;
 
 import java.util.*;
 

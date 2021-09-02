@@ -1,4 +1,4 @@
-package _11_stack_queue.bai_tap.optional;
+package _11_stack_queue.optional;
 
 import java.util.Scanner;
 import java.util.Stack;
