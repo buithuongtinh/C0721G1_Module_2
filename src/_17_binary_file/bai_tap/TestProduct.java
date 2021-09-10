@@ -79,15 +79,15 @@ public class TestProduct {
     public static void add() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập vào id sản phẩm");
-        int idProduct = scanner.nextInt();
+        int idProduct = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhập vào tên sản phẩm");
-        String nameProduct = scanner.next();
+        String nameProduct = scanner.nextLine();
         System.out.println("Nhập vào hãng sản xuất");
-        String Manufacturer = scanner.next();
+        String Manufacturer = scanner.nextLine();
         System.out.println("Nhập vào số tiền");
-        double price = scanner.nextDouble();
+        double price = Double.parseDouble(scanner.nextLine());
         System.out.println("Mô tả khác");
-        String MoTaKhac = scanner.next();
+        String MoTaKhac = scanner.nextLine();
         list.add(new Product(idProduct, nameProduct, Manufacturer, price, MoTaKhac));
         writeFile("src\\_17_binary_file\\bai_tap\\products.csv", list);
 
