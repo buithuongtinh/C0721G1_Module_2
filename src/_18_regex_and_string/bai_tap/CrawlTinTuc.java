@@ -1,28 +1,28 @@
-package _18_regex_and_string.thuc_hanh;
+package _18_regex_and_string.bai_tap;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CrawlSongExample {
+public class CrawlTinTuc {
     public static void main(String[] args) {
         try {
-            URL url = new URL("https://www.nhaccuatui.com/bai-hat/nhac-tre-moi.html");
-            // open the stream and put it into BufferedReader
-            Scanner scanner = new Scanner(new InputStreamReader(url.openStream()));
-            scanner.useDelimiter("\\Z");
-            String content = scanner.next();
-            // close scanner
-            scanner.close();
-            // remove all new line
+            URL url = new URL("https://dantri.com.vn/the-gioi.htm");
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(url.openStream()));
+            StringBuilder contentBuilder = new StringBuilder();
+            String content;
+            while ((content = bufferedReader.readLine()) != null) {
+                contentBuilder.append(content);
+            }
+            content = contentBuilder.toString();
+            bufferedReader.close();
             content = content.replaceAll("\\n+", "");
-            // regex
-            Pattern p = Pattern.compile("name_song\">(.*?)</a>");
+            Pattern p = Pattern.compile("title=\"(.*?)\">");
             Matcher m = p.matcher(content);
             while (m.find()) {
                 System.out.println(m.group(1));
@@ -35,4 +35,5 @@ public class CrawlSongExample {
             e.printStackTrace();
         }
     }
+
 }
