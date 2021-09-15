@@ -41,4 +41,7 @@ public class House extends Facility{
                 ", floor=" + floor +
                 "} " + super.toString();
     }
+    public String getHouseToString() {
+        return super.getFacilityToString()+","+this.getStandardHouse()+","+this.getFloor();
+    }
 }

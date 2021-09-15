@@ -1,9 +1,11 @@
 package _20_case_study_furama_resort.controllers;
 
-import _20_case_study_furama_resort.libs.Exception;
 import _20_case_study_furama_resort.services.class_service.CustomerServiceImpl;
 
-public class CustomerManagement extends Exception {
+import java.util.Scanner;
+
+public class CustomerManagement  {
+    private static final Scanner scanner = new Scanner(System.in);
     public void displayCustomerMenu() {
         while (true) {
             System.out.println("-----Customer Menu-----");
@@ -12,7 +14,17 @@ public class CustomerManagement extends Exception {
             System.out.println("3. Edit customer");
             System.out.println("4. Return main menu");
             System.out.println("Enter your choice");
-            switch (choiceNumber()) {
+            boolean checkLoop = false;
+            int choice = 0;
+            while (!checkLoop){
+                try {
+                    choice = Integer.parseInt(scanner.nextLine());
+                    checkLoop = true;
+                } catch (NumberFormatException ex) {
+                    System.out.println("Entered wrong, please re-enter");
+                }
+            }
+            switch (choice) {
                 case 1:
                     new CustomerServiceImpl().display();
                     break;
@@ -23,8 +35,9 @@ public class CustomerManagement extends Exception {
                     new CustomerServiceImpl().edit();
                     break;
                 case 4:
-                    new FuramaController().displayMainMenu();
-                    break;
+                    return;
+//                    new FuramaController().displayMainMenu();
+//                    break;
                 default:
                     System.out.println("Please re-enter:");
             }

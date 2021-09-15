@@ -1,12 +1,9 @@
 package _20_case_study_furama_resort.utils;
 
-import _20_case_study_furama_resort.models.Customer;
-import _20_case_study_furama_resort.models.Employee;
+import _20_case_study_furama_resort.models.*;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class ReadAndWriteFile {
     private static void writeListStringToCSV(List<String> stringList, String path, boolean append){
@@ -37,6 +34,28 @@ public class ReadAndWriteFile {
         List<String> stringList =new LinkedList<>();
         for (Customer customerList : list){
             stringList.add(customerList.getStringToWrite());
+        }
+        writeListStringToCSV(stringList,path,append);
+    }
+
+    public static void writeListHouseCSV(List<House> list, String path, boolean append){
+        List<String> stringList =new ArrayList<>();
+        for (House house : list){
+            stringList.add(house.getHouseToString());
+        }
+        writeListStringToCSV(stringList,path,append);
+    }
+    public static void writeListRoomCSV(List<Room> list, String path, boolean append){
+        List<String> stringList =new ArrayList<>();
+        for (Room room : list){
+            stringList.add(room.getRoomToString());
+        }
+        writeListStringToCSV(stringList,path,append);
+    }
+    public static void writeListVillaCSV(List<Villa> list, String path, boolean append){
+        List<String> stringList =new ArrayList<>();
+        for (Villa villa : list){
+            stringList.add(villa.getVillaToString());
         }
         writeListStringToCSV(stringList,path,append);
     }
@@ -82,5 +101,47 @@ public class ReadAndWriteFile {
             customersList.add(customer);
         }
         return customersList;
+    }
+    public static void writeListFacilityCSV(Map<Facility,Integer> list, String path, boolean append){
+        List<String> stringList =new ArrayList<>();
+        Set<Facility> facilitySet = list.keySet();
+        for (Facility facility : facilitySet){
+            String keySet = facility.getNameService() + ","+list.get(facility);
+            stringList.add(keySet);
+        }
+        writeListStringToCSV(stringList,path,append);
+    }
+    public static List<House> getListHouseFromCSV(String path) {
+        List<House> houses = new ArrayList<>();
+        List<String> stringList = readCSV(path);
+        for (String line : stringList) {
+            String[] array = line.split(",");
+            House house = new House(array[0],Double.parseDouble(array[1]), Double.parseDouble(array[2]),Integer.parseInt(array[3]),
+                    array[4],array[5],Integer.parseInt(array[6]));
+            houses.add(house);
+        }
+        return houses;
+    }
+    public static List<Room> getListRoomFromCSV(String path) {
+        List<Room> rooms = new ArrayList<>();
+        List<String> stringList = readCSV(path);
+        for (String line : stringList) {
+            String[] array = line.split(",");
+            Room room = new Room(array[0],Double.parseDouble(array[2]), Double.parseDouble(array[3]),
+                    Integer.parseInt(array[4]), array[5], array[6]);
+            rooms.add(room);
+        }
+        return rooms;
+    }
+    public static List<Villa> getListVillaFromCSV(String path) {
+        List<Villa> villas = new ArrayList<>();
+        List<String> stringList = readCSV(path);
+        for (String line : stringList) {
+            String[] array = line.split(",");
+            Villa villa = new Villa(array[0], Double.parseDouble(array[1]), Double.parseDouble(array[2]),
+                    Integer.parseInt(array[3]), array[4], array[5],Double.parseDouble(array[6]),Integer.parseInt(array[7]));
+            villas.add(villa);
+        }
+        return villas;
     }
 }

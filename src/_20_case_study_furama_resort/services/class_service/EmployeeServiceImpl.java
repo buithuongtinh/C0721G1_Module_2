@@ -1,6 +1,5 @@
 package _20_case_study_furama_resort.services.class_service;
 
-import _20_case_study_furama_resort.libs.Exception;
 import _20_case_study_furama_resort.models.Employee;
 import _20_case_study_furama_resort.services.EmployeeService;
 import _20_case_study_furama_resort.utils.ReadAndWriteFile;
@@ -10,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class EmployeeServiceImpl extends Exception implements EmployeeService {
+public class EmployeeServiceImpl implements EmployeeService {
     public static List<Employee> list = new ArrayList<>();
     public static Scanner scanner = new Scanner(System.in);
     final String FILE_EMPLOYEE = "src\\_20_case_study_furama_resort\\data\\employee.csv";

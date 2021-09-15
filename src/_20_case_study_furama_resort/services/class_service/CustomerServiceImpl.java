@@ -1,6 +1,5 @@
 package _20_case_study_furama_resort.services.class_service;
 
-import _20_case_study_furama_resort.libs.Exception;
 import _20_case_study_furama_resort.models.Customer;
 import _20_case_study_furama_resort.services.CustomerService;
 import _20_case_study_furama_resort.utils.ReadAndWriteFile;
@@ -9,9 +8,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class CustomerServiceImpl extends Exception implements CustomerService {
+public class CustomerServiceImpl implements CustomerService {
     public static List<Customer> linkedList = new LinkedList<>();
-//    public static Customer customer = new Customer();
     public static Scanner scanner = new Scanner(System.in);
     private static final String FILE_CUSTOMER = "src\\_20_case_study_furama_resort\\data\\customer.csv";
 
@@ -91,7 +89,7 @@ public class CustomerServiceImpl extends Exception implements CustomerService {
     public void edit() {
         List<Customer> customerList =ReadAndWriteFile.getListCustomerFromCSV(FILE_CUSTOMER);
         System.out.println("Enter id need to edit: ");
-        int idEdit = choiceNumber();
+        int idEdit = Integer.parseInt(scanner.nextLine());
         if (customerList.isEmpty()) {
             System.out.println("Nothing to edit");
         } else {

@@ -29,4 +29,8 @@ public class Room extends Facility {
                 "freeService='" + freeService + '\'' +
                 "} " + super.toString();
     }
+
+    public String getRoomToString() {
+        return super.getFacilityToString()+","+this.getFreeService();
+    }
 }

@@ -68,4 +68,8 @@ public abstract class Facility {
                 ", typeRent='" + typeRent + '\'' +
                 '}';
     }
+    public String getFacilityToString(){
+        return this.getNameService()+","+this.getUseArea()+","+this.getRentCost()+","+this.getMaxNumPeople()+","+this.getTypeRent();
+
+    }
 }
